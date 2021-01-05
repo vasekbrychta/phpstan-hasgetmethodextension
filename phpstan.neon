@@ -1,0 +1,15 @@
+parameters:
+	tmpDir: temp/phpstan
+	level: 8
+	paths:
+		- src/
+
+services:
+	guzzleHttpRequestException:
+		class: VasekBrychta\PhpStan\HasMakesGetMethodNonnullTypeSpecifyingExtension
+		arguments:
+			forClass: GuzzleHttp\Exception\RequestException
+			hasMethodName: hasResponse
+			removeNullMethodName: getResponse
+		tags:
+			- phpstan.typeSpecifier.methodTypeSpecifyingExtension

@@ -1,0 +1,14 @@
+{
+    "require": {
+        "phpstan/phpstan": "^0.12.64",
+        "guzzlehttp/guzzle": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "VasekBrychta\\": "src/"
+        }
+    },
+    "scripts": {
+        "phpstan": "vendor/phpstan/phpstan/phpstan analyse --ansi -vvv --configuration phpstan.neon"
+    }
+}
